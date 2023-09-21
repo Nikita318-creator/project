@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_hello/Views/MainPage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.red),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('it is good1'),
-          centerTitle: true,
-        ),
-        body: Center(child: Icon(Icons.abc_outlined)),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print('tap');
-          },
-          child: Text('tap'),
-          backgroundColor: Colors.deepPurple,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'SFProText',
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: Colors.orange,
         ),
       ),
+      home: const MainPage(),
     );
   }
 }
