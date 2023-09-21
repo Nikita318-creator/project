@@ -18,7 +18,7 @@ class App extends StatelessWidget {
           secondary: Colors.orange,
         ),
       ),
-      home: const MainPage(),
+      home: MainPage(),
     );
   }
 }
