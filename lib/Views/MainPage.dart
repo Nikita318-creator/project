@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Bicycles')),
-      backgroundColor: Colors.amber,
+      backgroundColor: const Color.fromARGB(255, 7, 255, 176),
       body: Padding(
         padding:
             const EdgeInsets.only(bottom: 350, left: 30, right: 30, top: 30),
@@ -54,7 +54,21 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          if (currentPage != bicycleModels.allBicycleModels.length - 1) {
+            pageController.animateToPage(
+              bicycleModels.allBicycleModels.length - 1,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeInOut,
+            );
+          } else {
+            pageController.animateToPage(
+              0,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeInOut,
+            );
+          }
+        },
         backgroundColor: Colors.blue,
         child: Icon(Icons.skip_next),
       ),
